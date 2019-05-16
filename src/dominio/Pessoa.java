@@ -13,7 +13,7 @@ public class Pessoa implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	private String nome;
 	private String email;
 	
@@ -21,14 +21,14 @@ public class Pessoa implements Serializable{
 		
 	}
 
-	public Pessoa(int id, String nome, String email) {
+	public Pessoa(Integer id, String nome, String email) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
