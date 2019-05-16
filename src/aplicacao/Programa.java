@@ -16,20 +16,16 @@ public class Programa {
 		//Iniciar a transação
 		em.getTransaction().begin();
 
-		//Pesquisar pessoa no banco passando o nome da class e o .class
-		Pessoa p01 = em.find(Pessoa.class, 1);
-		//Printar na tela
-		System.out.println(p01+"\n--------------");
+		/*
+		Não pode fazer dessa forma por que estaria tentando remover alguem que estava destacado
+		primeramente precisa ser alguem que esta monitorado
+		Pessoa p = new Pessoa(2, null, null);
+		em.remove(p);
+		*/
 		
-		//Pesquisar pessoa no banco passando o nome da class e o .class
-		Pessoa p02 = em.find(Pessoa.class, 2);
-		//Printar na tela
-		System.out.println("\n"+p02+"\n--------------");
-		
-		//Pesquisar pessoa no banco passando o nome da class e o .class
-		Pessoa p03 = em.find(Pessoa.class, 3);
-		//Printar na tela
-		System.out.println("\n"+p03);
+		//Assim remove a pessoa 2
+		Pessoa pessoa = em.find(Pessoa.class, 2);
+		em.remove(pessoa);
 		
 		//Confirmar as alterções que eu fiz
 		em.getTransaction().commit();
