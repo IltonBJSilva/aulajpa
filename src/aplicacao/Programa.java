@@ -19,9 +19,17 @@ public class Programa {
 		
 		//Iniciar a transação
 		em.getTransaction().begin();
-		em.persist(p1);
-		em.persist(p2);
-		em.persist(p3);
+
+		
+		Pessoa p01 = em.find(Pessoa.class, 1);
+		System.out.println(p01+"\n--------------");
+
+		Pessoa p02 = em.find(Pessoa.class, 2);
+		System.out.println("\n"+p02+"\n--------------");
+		
+		Pessoa p03 = em.find(Pessoa.class, 3);
+		System.out.println("\n"+p03);
+		
 		//Confirmar as alterções que eu fiz
 		em.getTransaction().commit();
 		em.close();
