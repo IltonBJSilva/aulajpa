@@ -10,24 +10,25 @@ public class Programa {
 
 	public static void main(String[] args) {
 		
-		Pessoa p1 = new Pessoa(null,"Ezequiel Santana", "EzeAna@gmail.com");
-		Pessoa p2 = new Pessoa(null, "Fabio mello", "famello@gmail.com");
-		Pessoa p3 = new Pessoa(null,"Elian morais", "Elimorais@gmail.com");
-		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
 		EntityManager em = emf.createEntityManager();
 		
 		//Iniciar a transação
 		em.getTransaction().begin();
 
-		
+		//Pesquisar pessoa no banco passando o nome da class e o .class
 		Pessoa p01 = em.find(Pessoa.class, 1);
+		//Printar na tela
 		System.out.println(p01+"\n--------------");
-
+		
+		//Pesquisar pessoa no banco passando o nome da class e o .class
 		Pessoa p02 = em.find(Pessoa.class, 2);
+		//Printar na tela
 		System.out.println("\n"+p02+"\n--------------");
 		
+		//Pesquisar pessoa no banco passando o nome da class e o .class
 		Pessoa p03 = em.find(Pessoa.class, 3);
+		//Printar na tela
 		System.out.println("\n"+p03);
 		
 		//Confirmar as alterções que eu fiz
@@ -35,7 +36,5 @@ public class Programa {
 		em.close();
 		emf.close();
 		System.out.println("Pronto!!! ");
-
 	}
-
 }
